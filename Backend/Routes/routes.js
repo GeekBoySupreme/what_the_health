@@ -16,10 +16,22 @@ router.get("/", async (req, res) => {
 
 
 
-//Read Monthly Logs
-router.get("/month", async (req, res) => {
+//Get a song
+router.get("/get_a_song", async (req, res) => {
     try {
-        const readLogs = await Log.find({ "month" : req.query.month });
+        rand = Math.random();
+        const readLogs = await Log.aggregate([{$sample:{size:1}}]);
+        res.json(readLogs);
+    }
+    catch(err) {
+        res.json({ message : err.name });
+    }
+});
+
+//Get individual log
+router.get("/user", async (req, res) => {
+    try {
+        const readLogs = await Log.find({ "userId" : req.query.id });
         res.json(readLogs);
     }
     catch(err) {
