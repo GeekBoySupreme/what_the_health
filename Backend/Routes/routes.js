@@ -21,7 +21,7 @@ router.get("/get_a_song", async (req, res) => {
     try {
         rand = Math.random();
         const readLogs = await Log.aggregate([{$sample:{size:1}}]);
-        res.json(readLogs);
+        res.json({ spotify_link: readLogs[0].spotify_link });
     }
     catch(err) {
         res.json({ message : err.name });
