@@ -28,6 +28,18 @@ router.get("/get_a_song", async (req, res) => {
     }
 });
 
+
+//Send song from backup
+router.get("/backup_song", async (req, res) => {
+    try {
+        rand = Math.floor(Math.random()*(spotify_list.length));
+        res.json({ spotify_link: spotify_list[rand] });
+    }
+    catch(err) {
+        res.json({ message : err.name });
+    }
+});
+
 //Get individual log
 router.get("/user", async (req, res) => {
     try {
@@ -68,3 +80,9 @@ router.post('/', async (req, res) => {
 })
 
 module.exports = router;
+
+
+
+var spotify_list = [
+
+];

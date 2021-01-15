@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?&family=Chivo&family=Eczar:wght@500&family=Proza+Libre:wght@500&family=Karla&family=Rubik&family=Space+Mono&family=Playfair+Display:wght@500&family=Montserrat&family=Inter&family=Roboto&family=Poppins+Slab&family=Work+Sans:wght@500&family=Nunito:wght@700;800;900&display=swap');
+
+body {
+    background-image: url("img/background.gif");
+    background-repeat: repeat;
+    background-size: 770px;
+    /* overflow: hidden; */
+
+    font-family: 'Nunito', sans-serif!important;
+}
+
+
+
+
+
+  /*------- Scrollbar --------------*/
+  body::-webkit-scrollbar {
+    width: 0.6rem!important;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #bebebe!important;
+    border-radius: 50px;
+  }
+
+  #intro_panel, #result_container {
+      transition: all 0.3s ease;
+      animation: slideUp 0.3s;
+  }
+
+  @keyframes slideUp {
+      0% {
+          position: relative;
+          top: 10px;
+      }
+      100% {
+          position: relative;
+          top: 0px;
+      }
+  }
