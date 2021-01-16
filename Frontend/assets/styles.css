@@ -74,7 +74,7 @@ body {
     width:70%;
     margin: 4px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,12 +87,33 @@ body {
 
 .list_index {
     color: blue;
-    background: white;
-    padding: 4px 8px;
+    background: rgb(226, 226, 226);
+    padding: 4px 9px;
     border-radius: 7px;
     margin-right: 15px;
 }
 
+
+.list_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px auto;
+}
+.guess-input {
+  font-size: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.guess-input::placeholder {
+    color: rgba(255,255,255,0.3);
+}
 
 
   /*------- Scrollbar --------------*/
