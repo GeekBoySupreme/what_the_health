@@ -114,18 +114,18 @@
                             <h3 class="title_white title">Have you smoked?</h3>
                             <br />
                             <div class="list_wrapper">
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_smoke('I currently smoke')">
                                     <span class="list_index">A</span> I currently smoke
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_smoke('I used to smoke')">
                                     <span class="list_index">B</span> I used to smoke
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_smoke('I have never smoke')">
                                     <span class="list_index">C</span> I've never smoked
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(5)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -134,18 +134,18 @@
                             <h3 class="title_white title">Your actions in response to Covid-19?</h3>
                             <br />
                             <div class="list_wrapper">
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_response('Staying at Home')">
                                     <span class="list_index">A</span> Staying at home/ Isolation
                                 </button>
-                                <button class="list_button">
-                                    <span class="list_index">B</span> Regular activities, with social-distancing
+                                <button class="list_button" onclick="update_response('Socially-Distanced activities')">
+                                    <span class="list_index">B</span> Socially-Distanced activities
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_response('As usual, no change')">
                                     <span class="list_index">C</span> As usual, no change.
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(6)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_6">
@@ -153,18 +153,18 @@
                             <h3 class="title_white title">How many people are there in your household?</h3>
                             <br />
                             <div class="list_wrapper">
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_family('1')">
                                     <span class="list_index">A</span> Just me
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_family('2-10')">
                                     <span class="list_index">B</span> 2-10
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_family('>10')">
                                     <span class="list_index">C</span> > 10
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(7)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -173,15 +173,15 @@
                             <h3 class="title_white title">Have you interacted with anyone who tested positive before/after the interaction?</h3>
                             <br />
                             <div class="list_wrapper">
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_interaction('yes')">
                                     <span class="list_index">A</span> Yes
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_interaction('no')">
                                     <span class="list_index">B</span> No
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(8)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_8">
@@ -189,10 +189,10 @@
                             <h3 class="title_white title">How old are you?</h3>
                             <br />
                             <div class="input_wrapper">
-                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Your age"/>
+                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Your age" id="age_input"/>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="update_age('age_input'); go_next(9)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_9">
@@ -203,7 +203,7 @@
                                 <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Pincode" />
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_10">
@@ -214,7 +214,7 @@
                                 <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link"/>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(11)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_11">
