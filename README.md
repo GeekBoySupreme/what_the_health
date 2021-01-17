@@ -8,6 +8,9 @@ What the Health tries to add a level of transparency and old school nostalgia by
 <b>Tech Stack - (Backend - Node, MongoDB; Frontend - Vanilla HTML, CSS, JS)</b>
 <br/>
 <br/>
+<b>Link to Video ➡️ https://youtu.be/ysc8rdWiPW0 </b>
+<br/>
+<br/>
 <img src="https://user-images.githubusercontent.com/15321738/104853664-4e2bf680-5928-11eb-92aa-9a36090d672b.PNG" width="70%"/>
 
 <br/>
@@ -19,6 +22,3 @@ What the Health tries to add a level of transparency and old school nostalgia by
 
 <br/>
 <img src="https://user-images.githubusercontent.com/15321738/104853683-66037a80-5928-11eb-9f89-a59b0900ed6f.png" width="50%"/>
-
-
-![screencapture-whatthehealth-netlify-app-2021-01-18-00_57_49]()
