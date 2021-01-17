@@ -66,27 +66,27 @@
                         
                             </p>
                             <br /><br />
-                            <button class="action_button"> I Agree </button>
+                            <button class="action_button" onclick="go_next(2)"> I Agree </button>
                         </div>
 
 
                         <div class="content_card" id="content_card_2">
-                            <br />
+                            <br /><br />
                             <h3 class="title_white title">How are you feeling today?</h3>
-                            <br />
+                            <br /><br />
                             <div class="feel_wrapper">
-                                <button class="feel_button">
+                                <button class="feel_button" onclick="update_howifeel('good')">
                                     <span>😃</span>
                                     <span>Good</span>
                                 </button>
-                                <button class="feel_button">
+                                <button class="feel_button" onclick="update_howifeel('not_good')">
                                     <span>😔</span>
                                     <span>Not Good</span>
                                 </button>
                             </div>
 
-                            <br /><br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <br /><br /><br /><br />
+                            <button class="action_button" onclick="go_next(3)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -95,18 +95,18 @@
                             <h3 class="title_white title">Do you have any of these?</h3>
                             <br />
                             <div class="list_wrapper">
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_disease('lung_disorder')">
                                     <span class="list_index">A</span> Any Lung Disorder
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_disease('heart_disorder')">
                                     <span class="list_index">B</span> Any Heart Disorder
                                 </button>
-                                <button class="list_button">
+                                <button class="list_button" onclick="update_disease('immunodeficiency')">
                                     <span class="list_index">C</span> Immunodeficiency
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="go_next(4)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_4">
