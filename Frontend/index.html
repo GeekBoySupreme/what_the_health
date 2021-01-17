@@ -146,6 +146,7 @@
                             <h3 class="title_white title">Your actions in response to Covid-19?</h3>
                             <br />
                             <div class="list_wrapper">
+                                <img src="https://media.giphy.com/media/26Fxy3Iz1ari8oytO/giphy.gif" width="30px" />
                                 <button class="list_button" onclick="update_response('Staying at Home')">
                                     <span class="list_index">A</span> Staying at home
                                 </button>
@@ -215,7 +216,11 @@
                             <h3 class="title_white title">Your Pincode</h3>
                             <br />
                             <div class="input_wrapper">
-                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Pincode" id="pincode_input"/>
+                                <div class="image_with_text">
+                                    <img src="https://media.giphy.com/media/UVqtJu2I0xkt0kqwkb/giphy.gif" width="30px" /><span>Please enter a valid Zipcode
+                                        !</span>
+                                </div>
+                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Zipcode" id="pincode_input"/>
                             </div>
                             <br /><br />
                             <button class="action_button" disabled onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
@@ -226,6 +231,10 @@
                             <h3 class="title_white title">Share a spotify playlist/song...</h3>
                             <br />
                             <div class="input_wrapper">
+                                <div class="image_with_text">
+                                    <img src="https://media.giphy.com/media/PgnpGT8tJsWfNabS8d/giphy.gif" width="30px" /><span>Please enter a valid link
+                                        !</span>
+                                </div>
                                 <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link" id="spotify_input"/>
                             </div>
                             <br /><br />
@@ -238,11 +247,12 @@
                             <h3 class="title_white title">You Checked in !</h3>
                             <br />
                             <div id="status_space">
-
+                                <img src="https://media.giphy.com/media/YQ4Gv1vTQ9i3ngjQbi/giphy.gif" width="30px" /> &nbsp;Loading . . .
                             </div>
                             <div id="song_space">
 
                             </div>
+                            <br/>
                             <div id="gif_space">
 
                             </div>

@@ -1,10 +1,12 @@
 function go_next(a) {
   var cards = document.getElementsByClassName('content_card');
 
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.display = "none";
-  }
-  document.getElementById('content_card_' + a).style.display = "block";
+  setTimeout(function () {
+      for (var i = 0; i < cards.length; i++) {
+        cards[i].style.display = "none";
+      }
+      document.getElementById("content_card_" + a).style.display = "block";
+  }, 200);
 }
 
 var how_you_feel = "",
@@ -51,7 +53,6 @@ function update_interaction(z) {
 
 function update_age(den) {
   age = document.getElementById(den).value;
-  undisable_button(8);
 }
 
 function update_pin(pinvalue) {
@@ -246,3 +247,15 @@ var action_button = document.getElementsByClassName('action_button');
 function undisable_button(index) {
   action_button[index].disabled = false;
 }
+
+document.getElementById("age_input").addEventListener("click", function () {
+    undisable_button(8);
+});
+
+document.getElementById("pincode_input").addEventListener("click", function () {
+  undisable_button(9);
+});
+
+document.getElementById("spotify_input").addEventListener("click", function () {
+  undisable_button(10);
+});
