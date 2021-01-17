@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?&family=Nunito:wght@500;900&display=swap');
+
+#content_card_1,#content_card_2,#content_card_3,#content_card_4,#content_card_5,#content_card_6,#content_card_7,#content_card_8,#content_card_9,#content_card_10,#content_card_11 {
+    display: none;
+}
+
+body {
+    background-image: url('https://media.giphy.com/media/3ohs4oJF5ezJlBvYn6/giphy.gif');
+    background-size: 100vw 100vh;
+    /* overflow: hidden; */
+
+    font-family: 'Nunito', sans-serif!important;
+}
+
+button:focus, input:focus, button:active, input:active {
+    outline: none;
+}
+
+.content_wrapper {
+    width: 100%;
+    min-height: 90vh;
+    color: #f5f5f5;
+    background: #1f1f1f;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px;
+
+    animation: slideUp 0.4s;
+}
+
+.content_card {
+    animation: slideUp 0.4s;
+    transition: all 0.4s ease-out;
+}
+
+.app_logo {
+    width: 100px;
+    margin: 40px auto;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 40px;
+}
+
+.action_button {
+    font-size: 20px;
+    padding: 15px 60px;
+    border-radius: 15px;
+    border: none;
+
+    position: relative;
+    box-shadow: 0px 10px #3168ff;
+    transition: all 0.2s ease-out;
+}
+
+.action_button:hover {
+    background: rgb(224, 224, 224);
+}
+.action_button:focus {
+    background-color: rgb(255, 61, 110);
+    color: white;
+    box-shadow: 0px 10px #2a0caf;
+}
+.action_button:active {
+    position: relative;
+    background-color: rgb(255, 61, 110);
+    color: white;
+    box-shadow: none;
+    top: 10px;
+}
+
+
+.feel_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+.gif_holder {
+    border-radius: 10px;
+}
+
+.feel_button {
+    width:30%;
+    height: 100px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0px 10px #3168ff;
+    transition: all 0.2s ease-out;
+}
+
+.feel_button:hover {
+    background-color: #e4e4e4;
+}
+.feel_button:focus {
+    background-color: rgb(73, 121, 255);
+    color: white;
+    box-shadow: 0px 10px #2d0acc;
+}
+.feel_button:active {
+    position: relative;
+    background-color: rgb(73, 121, 255);
+    color: white;
+    box-shadow: none;
+    top: 10px;
+}
+
+.status_users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.song_div {
+    display: flex;
+    width: 98%;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+    border-radius: 10px;
+    background-color: #292929;
+    text-decoration: none!important;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.song_div {
+    background-color: #2e2e2e;
+}
+
+a {
+    text-decoration: none;
+}
+
+.song_first_row {
+    color: white;
+    font-size: 20px;
+}
+
+.feel_stats {
+    width:48%;
+    height: 100px;
+    margin: 5px auto;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+    padding: 15px 2px;
+}
+
+.list_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.list_button {
+    width:70%;
+    margin: 4px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 15px;
+
+    color: white;
+    background-color: #444444;
+    transition: all 0.3s ease-out;
+}
+
+.list_button:hover {
+    background-color: #535353;
+}
+.list_button:focus {
+    background-color: rgb(51, 105, 255);
+    color: white;
+}
+.list_button:active {
+    background-color: rgb(51, 105, 255);
+    color: white;
+}
+
+
+.list_index {
+    color: #3168ff;
+    background: rgb(226, 226, 226);
+    padding: 4px 9px;
+    border-radius: 7px;
+    margin-right: 15px;
+}
+
+
+.input_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+.guess-input {
+  font-size: 35px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.guess-input:hover, .guess-input:focus, .guess-input:active {
+    background-color: #222222;
+}
+
+.spotify_link_input {
+    width: 90%;
+    min-width: 200px;
+}
+
+.guess-input::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+
+.floating_footer {
+    color: white;
+    background-color: rgb(36, 36, 36);
+    padding: 10px 30px;
+    width: 280px;
+    border-radius: 50px;
+    white-space: nowrap;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.floating_text {
+    color: white;
+    background-color: rgb(36, 36, 36);
+    padding: 10px 30px;
+    width: 80%;
+    border-radius: 50px;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.fa-heart {
+    color: rgb(255, 87, 58);
+    margin: 4px;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.image_with_text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(253, 204, 114);
+}
+.image_with_text img {
+    margin-right: 8px;
+}
+
+  /*------- Scrollbar --------------*/
+  body::-webkit-scrollbar {
+    width: 0.6rem!important;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #fffcf900;
+    opacity: 0;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #407cff!important;
+    border-radius: 50px;
+  }
+
+  #intro_panel, #result_container {
+      transition: all 0.3s ease;
+      animation: slideUp 0.3s;
+  }
+
+  @keyframes slideUp {
+      0% {
+          position: relative;
+          top: 10px;
+      }
+      100% {
+          position: relative;
+          top: 0px;
+      }
+  }

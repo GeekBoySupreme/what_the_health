@@ -1,0 +1,279 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta property="og:title" content="What the Health">
+        <meta property="og:description"
+            content="What the Health is a platform to share your health data and connect with others">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous">
+        </script>
+
+        <link href="assets/styles.css" rel="stylesheet" />
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="favicon.png">
+        <link rel="icon" href="favicon.png">
+        <title>
+            What the Health
+        </title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" style="margin: 30px auto;">
+                        <div class="content_wrapper">
+                        <div class="content_card" id="content_card_0">
+                            <img class="app_logo" src="assets/img/whatthehealth.svg"/><img src="https://media.giphy.com/media/xThtaoFef8EOe2J5XG/giphy.gif" width="100px" style="margin-left: 15px;"/>
+                            <br/>
+                            <h2 class="title_white title">What the Health</h2>
+                            <br />
+                            <p class="support_text">
+                                Share what you feel to help scientists and public health officials fight the spread of covid-19 and make effective vaccination strategies.
+                                Check in daily and update us about what you are feeling.
+                            </p>
+                            <br/><br/>
+                            <button class="action_button" onclick="go_next(1)"> Get Started &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_1">
+                            <img class="app_logo" src="assets/img/whatthehealth.svg" /><img src="https://media.giphy.com/media/xThta1QRK5zPDpneiQ/giphy.gif" width="100px" style="margin-left: 15px;" />
+                            <br />
+                            <h2 class="title_white title">Donate your Data</h2>
+                            <br />
+                            <p class="support_text">
+                               We are trying to collect as much data as possible to help better align our resources in combating the pandemic.
+                               To minimize the risk of any data being associated with you, we do not collect any identifiable information like Name, email or Phone number.
+                        
+                            </p>
+                            <br /><br />
+                            <button class="action_button" onclick="go_next(2)"> I Agree </button>
+                        </div>
+
+
+                        <div class="content_card" id="content_card_2">
+                            <br /><br />
+                            <h3 class="title_white title">How are you feeling today?</h3>
+                            <br /><br />
+                            <div class="feel_wrapper">
+                                <button class="feel_button" onclick="update_howifeel('good')">
+                                    <span>😃</span>
+                                    <span>Good</span>
+                                </button>
+                                <button class="feel_button" onclick="update_howifeel('not_good')">
+                                    <span>😔</span>
+                                    <span>Not Good</span>
+                                </button>
+                            </div>
+
+                            <br /><br /><br /><br />
+                            <button class="action_button" disabled onclick="go_next(3)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+
+                        <div class="content_card" id="content_card_3">
+                            <br />
+                            <h3 class="title_white title">Do you have any of these?</h3>
+                            <br />
+                            <div class="list_wrapper">
+                                <button class="list_button" onclick="update_disease('lung_disorder')">
+                                    <span class="list_index">A</span> Chronic Lung Disorder
+                                </button>
+                                <button class="list_button" onclick="update_disease('heart_disorder')">
+                                    <span class="list_index">B</span> Chronic Heart Disorder
+                                </button>
+                                <button class="list_button" onclick="update_disease('immunodeficiency')">
+                                    <span class="list_index">C</span> Immunodeficiency
+                                </button>
+                                <button class="list_button" onclick="update_disease('cancer')">
+                                    <span class="list_index">D</span> Cancer
+                                </button>
+                                <button class="list_button" onclick="update_disease('asthma')">
+                                    <span class="list_index">E</span> Asthma
+                                </button>
+                                <button class="list_button" onclick="update_disease('diabetes')">
+                                    <span class="list_index">F</span> Diabetes
+                                </button>
+                                <button class="list_button" onclick="update_disease('none')">
+                                    <span class="list_index">G</span> Nope, none of these
+                                </button>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="go_next(4)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_4">
+                            <br />
+                            <h3 class="title_white title">Have you smoked?</h3>
+                            <br />
+                            <div class="list_wrapper">
+                                <button class="list_button" onclick="update_smoke('I currently smoke')">
+                                    <span class="list_index">A</span> I currently smoke
+                                </button>
+                                <button class="list_button" onclick="update_smoke('I used to smoke')">
+                                    <span class="list_index">B</span> I used to smoke
+                                </button>
+                                <button class="list_button" onclick="update_smoke('I have never smoke')">
+                                    <span class="list_index">C</span> I've never smoked
+                                </button>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="go_next(5)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+
+                        <div class="content_card" id="content_card_5">
+                            <br />
+                            <h3 class="title_white title">Your actions in response to Covid-19?</h3>
+                            <br />
+                            <div class="list_wrapper">
+                                <img src="https://media.giphy.com/media/26Fxy3Iz1ari8oytO/giphy.gif" width="30px" />
+                                <button class="list_button" onclick="update_response('Staying at Home')">
+                                    <span class="list_index">A</span> Staying at home
+                                </button>
+                                <button class="list_button" onclick="update_response('Socially-Distanced activities')">
+                                    <span class="list_index">B</span> Socially-Distanced activities
+                                </button>
+                                <button class="list_button" onclick="update_response('Isolated')">
+                                    <span class="list_index">C</span> Isolated
+                                </button>
+                                <button class="list_button" onclick="update_response('As usual, no change')">
+                                    <span class="list_index">D</span> As usual, no change.
+                                </button>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="go_next(6)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_6">
+                            <br />
+                            <h3 class="title_white title">How many people are there in your household?</h3>
+                            <br />
+                            <div class="list_wrapper">
+                                <button class="list_button" onclick="update_family('1')">
+                                    <span class="list_index">A</span> Just me
+                                </button>
+                                <button class="list_button" onclick="update_family('2-10')">
+                                    <span class="list_index">B</span> 2-10
+                                </button>
+                                <button class="list_button" onclick="update_family('>10')">
+                                    <span class="list_index">C</span> > 10
+                                </button>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="go_next(7)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+
+                        <div class="content_card" id="content_card_7">
+                            <br />
+                            <h3 class="title_white title">Have you interacted with anyone who tested positive before/after the interaction?</h3>
+                            <br />
+                            <div class="list_wrapper">
+                                <button class="list_button" onclick="update_interaction('yes')">
+                                    <span class="list_index">A</span> Yes
+                                </button>
+                                <button class="list_button" onclick="update_interaction('no')">
+                                    <span class="list_index">B</span> No
+                                </button>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="go_next(8)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_8">
+                            <br /><br/>
+                            <h3 class="title_white title">How old are you?</h3>
+                            <br />
+                            <div class="input_wrapper">
+                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Your age" id="age_input"/>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="update_age('age_input'); go_next(9)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_9">
+                            <br /><br />
+                            <h3 class="title_white title">Your Pincode</h3>
+                            <br />
+                            <div class="input_wrapper">
+                                <div class="image_with_text">
+                                    <img src="https://media.giphy.com/media/UVqtJu2I0xkt0kqwkb/giphy.gif" width="30px" /><span>Please enter a valid Zipcode
+                                        !</span>
+                                </div>
+                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Zipcode" id="pincode_input"/>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="content_card" id="content_card_10">
+                            <br /><br />
+                            <h3 class="title_white title">Share a spotify playlist/song...</h3>
+                            <br />
+                            <div class="input_wrapper">
+                                <div class="image_with_text">
+                                    <img src="https://media.giphy.com/media/PgnpGT8tJsWfNabS8d/giphy.gif" width="30px" /><span>Please enter a valid link
+                                        !</span>
+                                </div>
+                                <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link" id="spotify_input"/>
+                            </div>
+                            <br /><br />
+                            <button class="action_button" disabled onclick="update_spotify('spotify_input')"> Submit </button>
+                        </div>
+
+                        <div class="content_card" id="content_card_11">
+                            <br />
+                            <img src="https://media.giphy.com/media/1L6kI3Mz599p2RVMSp/giphy.gif" width="100px"/>
+                            <h3 class="title_white title">You Checked in !</h3>
+                            <div class="floating_text">
+                                This is not any a medical advice or test-taking tool. For official information, visit <a target="blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?gclid=Cj0KCQiA3Y-ABhCnARIsAKYDH7v9dSWqjjwRP45toXzh--4fSvf0VzhuApFsvWReqhEFVggkJO2j0_UaAtzIEALw_wcB">who.int</a>
+                            </div>
+                            <br />
+                            <div id="status_space">
+                                
+                            </div>
+                            <div id="song_space">
+                                <img src="https://media.giphy.com/media/YQ4Gv1vTQ9i3ngjQbi/giphy.gif" width="30px" /> &nbsp;Loading your song. . .
+                            </div>
+                            <br/>
+                            <div id="gif_space">
+
+                            </div>
+                            <br/>
+                            <div class="floating_footer">
+                                With <i class="fas fa-heart"></i> from <a target="blank" href="https://twitter.com/shuvam360">@shuvam360</a>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="assets/scripts.js"></script>
+
+    </body>
+</html>
