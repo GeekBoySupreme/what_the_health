@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?&family=Nunito:wght@500;900&display=swap');
 
 body {
-    background-image: url('https://media.giphy.com/media/kDHNeVlj35o6t5W4pl/giphy.gif');
+    background-image: url('https://media.giphy.com/media/3ohs4oJF5ezJlBvYn6/giphy.gif');
     background-size: 100vw 100vh;
     /* overflow: hidden; */
 
@@ -18,7 +18,7 @@ body {
     box-shadow: 0px 10px #3168ff;
     padding: 30px;
 
-    margin: 15px 0px 10px 0px;
+    margin: 0px;
 }
 
 .app_logo {

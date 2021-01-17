@@ -203,3 +203,29 @@ async function test_spotify(link) {
 
   return flag;
 }
+
+
+function change_background() {
+  var background = [
+    "https://media.giphy.com/media/SYQZsJBTf2zE4/giphy.gif",
+    "https://media.giphy.com/media/26gZ1Ye2gkRUxtj9u/giphy.gif",
+    "https://media.giphy.com/media/1USKMDPjuH4ovL7J5h/giphy.gif",
+    "https://media.giphy.com/media/Ka1r959yBXQQrEK2vZ/giphy.gif",
+    "https://media.giphy.com/media/l4pSWmhzCYJyINwGs/giphy.gif",
+    "https://media.giphy.com/media/2Y59FyfIQe2W0wDYS0/giphy.gif",
+    "https://media.giphy.com/media/dwABcccmUZcU3pdXgD/giphy.gif",
+    "https://media.giphy.com/media/St2aawWmTL7ggtJTuB/giphy.gif",
+    "https://media.giphy.com/media/QxGdCR801b0nUmR7LE/giphy.gif",
+    "https://media.giphy.com/media/l0IygnBoXeQ94kJQQ/giphy.gif",
+    "https://media.giphy.com/media/kgFlsAswa9dXG/giphy.gif",
+    "https://media.giphy.com/media/xThtaaVNrPdQ64U9vq/giphy.gif",
+    "https://media.giphy.com/media/GB3MktbhWQPW8/giphy.gif",
+    "https://media.giphy.com/media/3o7WIHvqsj3emiv3eE/giphy.gif",
+  ];
+
+  document.body.style.background = "url(" + background[Math.floor(Math.random() * 14)] + ")";
+  document.body.style.backgroundSize = "100vw 100vh";
+}
+
+setInterval(change_background(), 5000);
+
