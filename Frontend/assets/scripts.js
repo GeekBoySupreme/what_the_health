@@ -21,34 +21,42 @@ var how_you_feel = "",
 
 function update_howifeel(b) {
   how_you_feel = b;
+  undisable_button(2);
 }
 
 function update_disease(q) {
   disease = q;
+  undisable_button(3);
 }
 
 function update_smoke(w) {
   smoke = w;
+  undisable_button(4);
 }
 
 function update_response(e) {
   response = e;
+  undisable_button(5);
 }
 
 function update_family(p) {
   family = p;
+  undisable_button(6);
 }
 
 function update_interaction(z) {
   interaction = z;
+  undisable_button(7);
 }
 
 function update_age(den) {
   age = document.getElementById(den).value;
+  undisable_button(8);
 }
 
 function update_pin(pinvalue) {
   pincode = document.getElementById(pinvalue).value;
+  undisable_button(9);
 }
 
 async function update_spotify(sp_link) {
@@ -225,7 +233,16 @@ function change_background() {
 
   document.body.style.background = "url(" + background[Math.floor(Math.random() * 14)] + ")";
   document.body.style.backgroundSize = "100vw 100vh";
+
 }
 
-setInterval(change_background(), 5000);
+setInterval(function () {
+  change_background()
+}, 5000);
 
+
+
+var action_button = document.getElementsByClassName('action_button');
+function undisable_button(index) {
+  action_button[index].disabled = false;
+}

@@ -167,6 +167,21 @@ a {
     color: rgba(255,255,255,0.3);
 }
 
+.floating_footer {
+    color: white;
+    background-color: rgb(36, 36, 36);
+    padding: 10px 30px;
+    width: 280px;
+    border-radius: 50px;
+    white-space: nowrap;
+    margin: 5px auto;
+}
+
+.fa-heart {
+    color: rgb(255, 87, 58);
+    margin: 4px;
+}
+
 
   /*------- Scrollbar --------------*/
   body::-webkit-scrollbar {

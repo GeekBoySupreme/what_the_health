@@ -86,7 +86,7 @@
                             </div>
 
                             <br /><br /><br /><br />
-                            <button class="action_button" onclick="go_next(3)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(3)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -96,17 +96,29 @@
                             <br />
                             <div class="list_wrapper">
                                 <button class="list_button" onclick="update_disease('lung_disorder')">
-                                    <span class="list_index">A</span> Any Lung Disorder
+                                    <span class="list_index">A</span> Chronic Lung Disorder
                                 </button>
                                 <button class="list_button" onclick="update_disease('heart_disorder')">
-                                    <span class="list_index">B</span> Any Heart Disorder
+                                    <span class="list_index">B</span> Chronic Heart Disorder
                                 </button>
                                 <button class="list_button" onclick="update_disease('immunodeficiency')">
                                     <span class="list_index">C</span> Immunodeficiency
                                 </button>
+                                <button class="list_button" onclick="update_disease('cancer')">
+                                    <span class="list_index">D</span> Cancer
+                                </button>
+                                <button class="list_button" onclick="update_disease('asthma')">
+                                    <span class="list_index">E</span> Asthma
+                                </button>
+                                <button class="list_button" onclick="update_disease('diabetes')">
+                                    <span class="list_index">F</span> Diabetes
+                                </button>
+                                <button class="list_button" onclick="update_disease('none')">
+                                    <span class="list_index">G</span> Nope, none of these
+                                </button>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(4)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(4)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_4">
@@ -125,7 +137,7 @@
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(5)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(5)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -135,17 +147,20 @@
                             <br />
                             <div class="list_wrapper">
                                 <button class="list_button" onclick="update_response('Staying at Home')">
-                                    <span class="list_index">A</span> Staying at home/ Isolation
+                                    <span class="list_index">A</span> Staying at home
                                 </button>
                                 <button class="list_button" onclick="update_response('Socially-Distanced activities')">
                                     <span class="list_index">B</span> Socially-Distanced activities
                                 </button>
+                                <button class="list_button" onclick="update_response('Isolated')">
+                                    <span class="list_index">C</span> Isolated
+                                </button>
                                 <button class="list_button" onclick="update_response('As usual, no change')">
-                                    <span class="list_index">C</span> As usual, no change.
+                                    <span class="list_index">D</span> As usual, no change.
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(6)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(6)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_6">
@@ -164,7 +179,7 @@
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(7)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(7)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
 
@@ -181,7 +196,7 @@
                                 </button>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(8)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="go_next(8)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_8">
@@ -192,7 +207,7 @@
                                 <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Your age" id="age_input"/>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="update_age('age_input'); go_next(9)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="update_age('age_input'); go_next(9)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_9">
@@ -203,7 +218,7 @@
                                 <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Pincode" id="pincode_input"/>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" disabled onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_10">
@@ -214,7 +229,7 @@
                                 <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link" id="spotify_input"/>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="update_spotify('spotify_input')"> Submit </button>
+                            <button class="action_button" disabled onclick="update_spotify('spotify_input')"> Submit </button>
                         </div>
 
                         <div class="content_card" id="content_card_11">
@@ -230,6 +245,10 @@
                             </div>
                             <div id="gif_space">
 
+                            </div>
+                            <br/>
+                            <div class="floating_footer">
+                                With <i class="fas fa-heart"></i> from <a target="blank" href="https://twitter.com/shuvam360">@shuvam360</a>
                             </div>
                         </div>
                         </div>
