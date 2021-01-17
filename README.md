@@ -30,5 +30,5 @@ What the Health tries to add a level of transparency and old school nostalgia by
 ### Setup
 <hr/>
 - For backend, `npm install` and `npm start` <br/>(Find a more detailed Readme inside Backend subfolder)
-- For frontend, ise VS Code Live Server extension to avoid CORS issues.
-<b>Live Site ➡️ https://stump-messy-geometry.glitch.me </b>
+- For frontend, ise VS Code Live Server extension to avoid CORS issues.<br/><br/>
+### Live Site ➡️ https://stump-messy-geometry.glitch.me 
