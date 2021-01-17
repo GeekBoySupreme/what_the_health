@@ -63,6 +63,9 @@ function update_pin(pinvalue) {
 async function update_spotify(sp_link) {
   spotify_link = document.getElementById(sp_link).value;
 
+    await get_name();
+    await send_data();
+
   await populate_endpanel();
   go_next(11);
 }
@@ -70,32 +73,36 @@ async function update_spotify(sp_link) {
 
 async function send_data() {
 
-  var settings = {
-    url: "https://stump-messy-geometry.glitch.me/logs/",
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var send_payload = {
+    name: "Click",
+    how_you_feel: "good",
+    other_ailments: "small_button",
+    have_you_smoked: "Sunday",
+    response_to_covid: "21",
+    people_in_household: "August",
+    interact: "2020",
+    age: "12",
+    zipcode: "6",
+    spotify_link: "28675",
+    userId: "334343535",
+  }
+
+  var raw = JSON.stringify(send_payload);
+
+  var requestOptions = {
     method: "POST",
-    timeout: 0,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: JSON.stringify({
-      name: name_string,
-      how_you_feel: how_you_feel,
-      other_ailments: disease,
-      have_you_smoked: smoke,
-      response_to_covid: response,
-      people_in_household: family,
-      interact: interaction,
-      age: age,
-      zipcode: pincode,
-      spotify_link: spotify_link,
-      userId: user_id,
-    }),
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
   };
 
-  $.ajax(settings).done(function (response) {
-    //console.log(response);
-  });
-
+  fetch("https://stump-messy-geometry.glitch.me/logs/", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
 }
 
 
@@ -104,8 +111,6 @@ async function populate_endpanel() {
   await get_a_song();
   await get_backup_song();
   await get_giphy();
-  await get_name();
-  await send_data();
 }
 
 
@@ -141,7 +146,7 @@ async function get_a_song() {
         '"><div class="song_div">\
         <div class="song_first_row">\
           <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="90px"/> <h2>A Song for you</h2>\
-          <p>We try to share song links with each other to make it fun to share health details.</p>\
+          <p>We try to share song links with each other to make it fun to share health details. Click on the Music box.</p>\
           <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
         </div>\
       </div></a>';
@@ -149,11 +154,14 @@ async function get_a_song() {
     }
     else {
       var html =
-      '<a target="blank" href="'+ get_backup_song() +'"><div class="song_div">\
+        '<a target="blank" href="' +
+        get_backup_song() +
+        '"><div class="song_div">\
         <div class="song_first_row">\
-          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="50px"/> A Song for you\
+          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="90px"/> <h2>A Song for you</h2>\
+          <p>We try to share song links with each other to make it fun to share health details. Click on the Music box.</p>\
+          <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
         </div>\
-        <img src="https://media.giphy.com/media/IfrucYnEVfvlhrgdYd/giphy.gif" width="100px"/>\
       </div></a>';
     document.getElementById("song_space").innerHTML = html;
     }
