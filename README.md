@@ -11,6 +11,8 @@ What the Health tries to add a level of transparency and old school nostalgia by
 <br/>
 <b>Link to Video ➡️ https://youtu.be/ysc8rdWiPW0 </b>
 <br/>
+<b>Link to Presentation ➡️ https://docs.google.com/presentation/d/1ENmTUDQL5Wop-M-nj4kmEm1G0cX9wA1b8sBsg2Pb7Qc/edit?usp=sharing</b>
+<br/>
 <br/>
 <img src="https://user-images.githubusercontent.com/15321738/104853664-4e2bf680-5928-11eb-92aa-9a36090d672b.PNG" width="70%"/>
 
