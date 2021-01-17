@@ -200,7 +200,7 @@
                             <h3 class="title_white title">Your Pincode</h3>
                             <br />
                             <div class="input_wrapper">
-                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Pincode" />
+                                <input class="guess-input" type="text" maxlength="10" size="8" placeholder="Pincode" id="pincode_input"/>
                             </div>
                             <br /><br />
                             <button class="action_button" onclick="update_pin('pincode_input'); go_next(10)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
@@ -211,10 +211,10 @@
                             <h3 class="title_white title">Share a spotify playlist/song...</h3>
                             <br />
                             <div class="input_wrapper">
-                                <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link"/>
+                                <input class="guess-input spotify_link_input" type="text" maxlength="100" placeholder="Enter Spotify Link" id="spotify_input"/>
                             </div>
                             <br /><br />
-                            <button class="action_button" onclick="go_next(11)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            <button class="action_button" onclick="update_spotify('spotify_input'); go_next(11)"> Next &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
 
                         <div class="content_card" id="content_card_11">

@@ -7,6 +7,8 @@ function go_next(a) {
   document.getElementById('content_card_' + a).style.display = "block";
 }
 
+var how_you_feel, disease, smoke, response, family, interaction, age, pincode, spotify_link;
+
 function update_howifeel(b) {
   how_you_feel = b;
 }
