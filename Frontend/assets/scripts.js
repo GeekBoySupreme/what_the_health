@@ -8,7 +8,7 @@ function go_next(a) {
 }
 
 var how_you_feel = "",
-  name_string = "asdf", 
+  name_string = "", 
   disease = "",
   smoke = "",
   response = "",
@@ -16,7 +16,7 @@ var how_you_feel = "",
   interaction = "",
   age = "",
   pincode = "",
-  user_id = "asdf",
+  user_id = "",
   spotify_link = "";
 
 function update_howifeel(b) {
@@ -54,7 +54,6 @@ function update_pin(pinvalue) {
 async function update_spotify(sp_link) {
   spotify_link = document.getElementById(sp_link).value;
 
-  await send_data();
   await populate_endpanel();
   go_next(11);
 }
@@ -97,6 +96,7 @@ async function populate_endpanel() {
   await get_backup_song();
   await get_giphy();
   await get_name();
+  await send_data();
 }
 
 
@@ -111,7 +111,16 @@ async function get_user_stats() {
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => function (result) {
+        var html =
+          '<div class="status_users"><div class="feel_stats"><span>😃 <h3>' +
+          result.feeling_good +
+          '</h3></span><span>People are feeling Good</span></div><div class="feel_stats"><span>😔 <h3>' +
+          result.feeling_bad +
+          "</h3></span><span>People are feeling not good</span></div></div>";
+        
+        document.getElementById("status_space").innerHTML = html;
+      })
       .catch((error) => console.log("error", error));
 }
 
@@ -155,7 +164,15 @@ async function get_giphy() {
   xhr.done(
     function(data) {
       console.log(data);
-  })
+      var html =
+        '<a target="blank" href="' +
+        data.data.bitly_gif_url +
+        '"><img class="gif_holder" src="' +
+        data.data.fixed_height_downsampled_url +
+        '"/>';
+      
+      document.getElementById("gif_space").innerHTML = html;
+    })
 }
 
 
@@ -164,7 +181,7 @@ async function get_name() {
     `https://ipgeolocation.abstractapi.com/v1/?api_key=1c81d0af693a4bb796e1e03feda584b8`
   );
   xhr.done(function (data) {
-    console.log(data.ip_address);
-    console.log(data.region_geoname_id);
+    name = data.ip_address;
+    user_id = data.region_geoname_id;
   });
 }
