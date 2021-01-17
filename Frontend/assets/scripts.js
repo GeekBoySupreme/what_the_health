@@ -77,17 +77,17 @@ async function send_data() {
   myHeaders.append("Content-Type", "application/json");
 
   var send_payload = {
-    name: "Click",
-    how_you_feel: "good",
-    other_ailments: "small_button",
-    have_you_smoked: "Sunday",
-    response_to_covid: "21",
-    people_in_household: "August",
-    interact: "2020",
-    age: "12",
-    zipcode: "6",
-    spotify_link: "28675",
-    userId: "334343535",
+    name: name_string,
+    how_you_feel: how_you_feel,
+    other_ailments: disease,
+    have_you_smoked: smoke,
+    response_to_covid: response,
+    people_in_household: family,
+    interact: interaction,
+    age: age,
+    zipcode: pincode,
+    spotify_link: spotify_link,
+    userId: user_id,
   }
 
   var raw = JSON.stringify(send_payload);
@@ -101,7 +101,7 @@ async function send_data() {
 
   fetch("https://stump-messy-geometry.glitch.me/logs/", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => console.log())
     .catch((error) => console.log("error", error));
 }
 
@@ -189,7 +189,6 @@ async function get_giphy() {
   var xhr = $.get(`https://api.giphy.com/v1/gifs/random?api_key=${mykey}&tag=${mytag}&limit=1`);
   xhr.done(
     function(data) {
-      console.log(data);
       var html =
         '<a target="blank" href="' +
         data.data.bitly_gif_url +
@@ -204,12 +203,14 @@ async function get_giphy() {
 
 async function get_name() {
   var xhr = $.get(
-    `https://ipgeolocation.abstractapi.com/v1/?api_key=1c81d0af693a4bb796e1e03feda584b8`
+    'https://ipgeolocation.abstractapi.com/v1/?api_key=1c81d0af693a4bb796e1e03feda584b8'
   );
   xhr.done(function (data) {
-    name = data.ip_address;
-    user_id = data.region_geoname_id;
+    name_string = '"' + data.ip_address + '"';
+    user_id = '"' + data.region_geoname_id + '"';
   });
+
+
 }
 
 
@@ -267,3 +268,6 @@ document.getElementById("pincode_input").addEventListener("click", function () {
 document.getElementById("spotify_input").addEventListener("click", function () {
   undisable_button(10);
 });
+
+
+get_name();
