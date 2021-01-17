@@ -7,6 +7,7 @@ What the Health tries to add a level of transparency and old school nostalgia by
 <br/><br/>
 <b>Tech Stack - (Backend - Node, MongoDB; Frontend - Vanilla HTML, CSS, JS)</b>
 <br/>
+<b>Live Site ➡️ https://whatthehealth.netlify.app/ </b>
 <br/>
 <b>Link to Video ➡️ https://youtu.be/ysc8rdWiPW0 </b>
 <br/>
@@ -22,7 +23,7 @@ What the Health tries to add a level of transparency and old school nostalgia by
 
 <br/>
 <b>Server deployed at ➡️ https://stump-messy-geometry.glitch.me </b><br/>
-<b>Live Site ➡️ https://stump-messy-geometry.glitch.me </b>
+<b>Live Site ➡️ https://whatthehealth.netlify.app/ </b>
 
 <br/>
 <img src="https://user-images.githubusercontent.com/15321738/104853683-66037a80-5928-11eb-9f89-a59b0900ed6f.png" width="50%"/>
@@ -32,4 +33,4 @@ What the Health tries to add a level of transparency and old school nostalgia by
 - For backend, `npm install` and `npm start` <br/>(Find a more detailed Readme inside Backend subfolder)
 - For frontend, ise VS Code Live Server extension to avoid CORS issues.<br/><br/>
 
-### Live Site ➡️ https://stump-messy-geometry.glitch.me 
+### Live Site ➡️ https://whatthehealth.netlify.app/
