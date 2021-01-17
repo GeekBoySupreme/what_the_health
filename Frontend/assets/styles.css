@@ -137,6 +137,10 @@ button:focus, input:focus, button:active, input:active {
     animation: slideUp 0.3s;
 }
 
+.song_div {
+    background-color: #2e2e2e;
+}
+
 a {
     text-decoration: none;
 }
@@ -248,6 +252,17 @@ a {
     width: 280px;
     border-radius: 50px;
     white-space: nowrap;
+    margin: 5px auto;
+    transition: all 0.2s ease-out;
+    animation: slideUp 0.3s;
+}
+
+.floating_text {
+    color: white;
+    background-color: rgb(36, 36, 36);
+    padding: 10px 30px;
+    width: 80%;
+    border-radius: 50px;
     margin: 5px auto;
     transition: all 0.2s ease-out;
     animation: slideUp 0.3s;

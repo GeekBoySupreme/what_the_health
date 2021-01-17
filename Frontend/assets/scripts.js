@@ -10,7 +10,7 @@ function go_next(a) {
 }
 
 var how_you_feel = "",
-  name_string = "", 
+  name_string = "qwerty", 
   disease = "",
   smoke = "",
   response = "",
@@ -18,7 +18,7 @@ var how_you_feel = "",
   interaction = "",
   age = "",
   pincode = "",
-  user_id = "",
+  user_id = "111111",
   spotify_link = "";
 
 function update_howifeel(b) {
@@ -52,19 +52,21 @@ function update_interaction(z) {
 }
 
 function update_age(den) {
-  age = document.getElementById(den).value;
+  if (document.getElementById(den).value)
+    age = document.getElementById(den).value;
 }
 
 function update_pin(pinvalue) {
-  pincode = document.getElementById(pinvalue).value;
-  undisable_button(9);
+  if (document.getElementById(pinvalue).value)
+    pincode = document.getElementById(pinvalue).value;
+  //undisable_button(9);
 }
 
 async function update_spotify(sp_link) {
   spotify_link = document.getElementById(sp_link).value;
 
     await get_name();
-    await send_data();
+    setTimeout(send_data(), 100);
 
   await populate_endpanel();
   go_next(11);
@@ -92,6 +94,8 @@ async function send_data() {
 
   var raw = JSON.stringify(send_payload);
 
+  console.log(raw)
+
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
@@ -101,7 +105,7 @@ async function send_data() {
 
   fetch("https://stump-messy-geometry.glitch.me/logs/", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log())
+    .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
 }
 
@@ -109,7 +113,6 @@ async function send_data() {
 async function populate_endpanel() {
   await get_user_stats();
   await get_a_song();
-  await get_backup_song();
   await get_giphy();
 }
 
@@ -137,9 +140,10 @@ async function get_a_song() {
 
   xhr.done(function (data) {
 
+    //console.log(data.spotify_link);
     var test_flag = test_spotify(data.spotify_link);
 
-    if (test_flag) {
+    if (data.spotify_link) {
       var html =
         '<a target="blank" href="' +
         data.spotify_link +
@@ -150,20 +154,13 @@ async function get_a_song() {
           <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
         </div>\
       </div></a>';
-    document.getElementById("song_space").innerHTML = html;
+      setTimeout(function () {
+        document.getElementById("song_space").innerHTML = html;
+        //console.log(html);
+    }, 500);
     }
     else {
-      var html =
-        '<a target="blank" href="' +
-        get_backup_song() +
-        '"><div class="song_div">\
-        <div class="song_first_row">\
-          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="90px"/> <h2>A Song for you</h2>\
-          <p>We try to share song links with each other to make it fun to share health details. Click on the Music box.</p>\
-          <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
-        </div>\
-      </div></a>';
-    document.getElementById("song_space").innerHTML = html;
+      get_backup_song();
     }
     
   });
@@ -172,13 +169,21 @@ async function get_a_song() {
 
 async function get_backup_song() {
   var xhr = $.get("https://stump-messy-geometry.glitch.me/logs/backup_song/");
-  var song_link = "";
 
   xhr.done(function (data) {
-    song_link = data.spotify_link;
+    var html1 =
+      '<a target="blank" href="' +
+      data.spotify_link +
+      '"><div class="song_div">\
+        <div class="song_first_row">\
+          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="90px"/> <h2>A Song for you</h2>\
+          <p>We try to share song links with each other to make it fun to share health details. Click on the Music box.</p>\
+          <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
+        </div>\
+      </div></a>';
+    setTimeout(function () { document.getElementById("song_space").innerHTML = html1; }, 500);
+    //console.log(html1);
   });
-
-  return song_link;
 }
 
 
@@ -206,8 +211,8 @@ async function get_name() {
     'https://ipgeolocation.abstractapi.com/v1/?api_key=1c81d0af693a4bb796e1e03feda584b8'
   );
   xhr.done(function (data) {
-    name_string = '"' + data.ip_address + '"';
-    user_id = '"' + data.region_geoname_id + '"';
+    name_string = 'name_' + data.ip_address;
+    user_id = 'id_' + data.region_geoname_id;
   });
 
 
@@ -270,4 +275,5 @@ document.getElementById("spotify_input").addEventListener("click", function () {
 });
 
 
-get_name();
+
+get_a_song();
