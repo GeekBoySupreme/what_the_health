@@ -282,6 +282,7 @@ a {
     justify-content: center;
     color: rgb(253, 204, 114);
 }
+
 .image_with_text img {
     margin-right: 8px;
 }
@@ -316,3 +317,12 @@ a {
           top: 0px;
       }
   }
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .floating_text {
+      width: 98%;
+  }
+  
+}
