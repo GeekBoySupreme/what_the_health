@@ -21,4 +21,14 @@ What the Health tries to add a level of transparency and old school nostalgia by
 - You get your result, and a new Spotify link for yourself.
 
 <br/>
+<b>Server deployed at ➡️ https://stump-messy-geometry.glitch.me </b><br/>
+<b>Live Site ➡️ https://stump-messy-geometry.glitch.me </b>
+
+<br/>
 <img src="https://user-images.githubusercontent.com/15321738/104853683-66037a80-5928-11eb-9f89-a59b0900ed6f.png" width="50%"/>
+
+### Setup
+<hr/>
+- For backend, `npm install` and `npm start` <br/>(Find a more detailed Readme inside Backend subfolder)
+- For frontend, ise VS Code Live Server extension to avoid CORS issues.
+<b>Live Site ➡️ https://stump-messy-geometry.glitch.me </b>
