@@ -101,27 +101,20 @@ async function populate_endpanel() {
 
 
 async function get_user_stats() {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
 
-    fetch(
-      "https://stump-messy-geometry.glitch.me/logs/user_status_number/",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => function (result) {
-        var html =
-          '<div class="status_users"><div class="feel_stats"><span>😃 <h3>' +
-          result.feeling_good +
-          '</h3></span><span>People are feeling Good</span></div><div class="feel_stats"><span>😔 <h3>' +
-          result.feeling_bad +
-          "</h3></span><span>People are feeling not good</span></div></div>";
-        
-        document.getElementById("status_space").innerHTML = html;
-      })
-      .catch((error) => console.log("error", error));
+  var xhr = $.get(
+    'https://stump-messy-geometry.glitch.me/logs/user_status_number/'
+  );
+  xhr.done(function (data) {
+    var html =
+      '<div class="status_users"><div class="feel_stats"><span><h3>😃 ' +
+      data.feeling_good +
+      '</h3></span><span>people are feeling Good</span></div><div class="feel_stats"><span><h3>😔 ' +
+      data.feeling_bad +
+      "</h3></span><span>people are not feeling good</span></div></div>";
+
+    document.getElementById("status_space").innerHTML = html;
+  });
 }
 
 async function get_a_song() {
@@ -169,7 +162,7 @@ async function get_giphy() {
         data.data.bitly_gif_url +
         '"><img class="gif_holder" src="' +
         data.data.fixed_height_downsampled_url +
-        '"/>';
+        '" width="150px"/>';
       
       document.getElementById("gif_space").innerHTML = html;
     })
