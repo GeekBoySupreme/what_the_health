@@ -1,0 +1,28 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "What the Health",
+    "short_name": "What the Health",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://whatthehealth.netlify.app/",
+    "background_color": "#000000",
+    "theme_color": "#ffffff",
+    "description": "What the Health is a platform to share your health data and connect with others",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "https://whatthehealth.netlify.app/favicon.png",
+            "type": "image/png",
+            "sizes": "140x140"
+        },
+        {
+            "src": "https://whatthehealth.netlify.app/favicon.png",
+            "type": "image/png",
+            "sizes": "140x140"
+        }
+    ],
+    "url": "https://whatthehealth.netlify.app/"
+}
