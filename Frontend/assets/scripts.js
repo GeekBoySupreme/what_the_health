@@ -118,34 +118,50 @@ async function get_user_stats() {
 }
 
 async function get_a_song() {
-      var requestOptions = {
-        method: "GET",
-        redirect: "follow",
-      };
 
-      fetch(
-        "https://stump-messy-geometry.glitch.me/logs/get_a_song/",
-        requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
+  var xhr = $.get("https://stump-messy-geometry.glitch.me/logs/get_a_song/");
+
+  xhr.done(function (data) {
+
+    var test_flag = test_spotify(data.spotify_link);
+
+    if (test_flag) {
+      var html =
+        '<a target="blank" href="' +
+        data.spotify_link +
+        '"><div class="song_div">\
+        <div class="song_first_row">\
+          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="90px"/> <h2>A Song for you</h2>\
+          <p>We try to share song links with each other to make it fun to share health details.</p>\
+          <img class="song_image" src="https://media.giphy.com/media/FwDvNgZRhIGTu6xwl3/giphy.gif" width="50px"/>\
+        </div>\
+      </div></a>';
+    document.getElementById("song_space").innerHTML = html;
+    }
+    else {
+      var html =
+      '<a target="blank" href="'+ get_backup_song() +'"><div class="song_div">\
+        <div class="song_first_row">\
+          <img src="https://media.giphy.com/media/YQMiQtopRjjZRSYRJF/giphy.gif" width="50px"/> A Song for you\
+        </div>\
+        <img src="https://media.giphy.com/media/IfrucYnEVfvlhrgdYd/giphy.gif" width="100px"/>\
+      </div></a>';
+    document.getElementById("song_space").innerHTML = html;
+    }
+    
+  });
 }
 
 
 async function get_backup_song() {
-  var requestOptions = {
-    method: "GET",
-    redirect: "follow",
-  };
+  var xhr = $.get("https://stump-messy-geometry.glitch.me/logs/backup_song/");
+  var song_link = "";
 
-  fetch(
-    "https://stump-messy-geometry.glitch.me/logs/backup_song/",
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
+  xhr.done(function (data) {
+    song_link = data.spotify_link;
+  });
+
+  return song_link;
 }
 
 
@@ -162,7 +178,7 @@ async function get_giphy() {
         data.data.bitly_gif_url +
         '"><img class="gif_holder" src="' +
         data.data.fixed_height_downsampled_url +
-        '" width="150px"/>';
+        '" width="200px"/>';
       
       document.getElementById("gif_space").innerHTML = html;
     })
@@ -177,4 +193,13 @@ async function get_name() {
     name = data.ip_address;
     user_id = data.region_geoname_id;
   });
+}
+
+
+async function test_spotify(link) {
+  var url = link;
+  var re = /^(spotify:|https:\/\/[a-z]+\.spotify\.com\/)/;
+  var flag = re.test(url);
+
+  return flag;
 }
