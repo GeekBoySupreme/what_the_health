@@ -50,6 +50,7 @@ button:focus, input:focus, button:active, input:active {
 
 .action_button {
     font-size: 20px;
+    font-weight: 900;
     padding: 15px 60px;
     border-radius: 15px;
     border: none;
@@ -292,7 +293,7 @@ a {
 
   /*------- Scrollbar --------------*/
   body::-webkit-scrollbar {
-    width: 0.6rem!important;
+    width: 0rem!important;
   }
   
   body::-webkit-scrollbar-track {
