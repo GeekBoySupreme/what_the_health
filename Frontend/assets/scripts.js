@@ -94,7 +94,7 @@ async function send_data() {
 
   var raw = JSON.stringify(send_payload);
 
-  console.log(raw)
+  //console.log(raw)
 
   var requestOptions = {
     method: "POST",
