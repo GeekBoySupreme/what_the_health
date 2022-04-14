@@ -149,11 +149,16 @@ button:focus, input:focus, button:active, input:active {
 
 a {
     text-decoration: none;
+    color: #3f8dff!important;
 }
 
 .song_first_row {
     color: white;
     font-size: 20px;
+}
+
+.song_first_row {
+    font-weight:900;
 }
 
 .feel_stats {
@@ -168,6 +173,10 @@ a {
     justify-content: center;
     background-color: #292929;
     padding: 15px 2px;
+}
+
+.feel_stats h3 {
+    font-weight:900;
 }
 
 .list_wrapper {
@@ -237,6 +246,7 @@ a {
   border-radius: 15px;
   text-align: center;
   transition: all 0.3s ease-out;
+    font-weight:900;
 }
 
 .guess-input:hover, .guess-input:focus, .guess-input:active {
@@ -268,8 +278,8 @@ a {
     color: white;
     background-color: rgb(36, 36, 36);
     padding: 10px 30px;
-    width: 80%;
-    border-radius: 50px;
+    width: 60%;
+    border-radius: 30px;
     margin: 5px auto;
     transition: all 0.2s ease-out;
     animation: slideUp 0.3s;
